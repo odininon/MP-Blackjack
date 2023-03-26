@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=3 uid="uid://oqlisnr6752o"]
+
+[ext_resource type="Script" path="res://game.gd" id="1_dkew5"]
+[ext_resource type="PackedScene" uid="uid://doxrtiiepr5i4" path="res://player.tscn" id="2_qrlke"]
+[ext_resource type="PackedScene" uid="uid://ub5wvt71i4v2" path="res://card_shoe.tscn" id="3_egwcm"]
+[ext_resource type="PackedScene" uid="uid://fkj3id66ylu3" path="res://dealer.tscn" id="4_oigu4"]
+
+[node name="Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_dkew5")
+number_of_decks = 7
+reshuffle_at_percentage = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -136.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_bottom = 300
+
+[node name="Players" type="HBoxContainer" parent="MarginContainer"]
+layout_direction = 3
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Player" parent="MarginContainer/Players" instance=ExtResource("2_qrlke")]
+layout_mode = 2
+size_flags_horizontal = 1
+
+[node name="CardShoe" parent="." instance=ExtResource("3_egwcm")]
+position = Vector2(1664, 64)
+
+[node name="Button" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 1720.0
+offset_top = 384.0
+offset_right = 1804.0
+offset_bottom = 415.0
+text = "Deal Card"
+
+[node name="Dealer" parent="." instance=ExtResource("4_oigu4")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -108.0
+offset_top = 40.0
+offset_right = 108.0
+offset_bottom = 176.0
+grow_horizontal = 2
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://ub5wvt71i4v2"]
+
+[ext_resource type="Script" path="res://card_shoe.gd" id="1_1ty6t"]
+[ext_resource type="PackedScene" uid="uid://175475ymlnss" path="res://unknown_card.tscn" id="2_80m3a"]
+
+[node name="CardShoe" type="Node2D"]
+script = ExtResource("1_1ty6t")
+card_back = ExtResource("2_80m3a")

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://fkj3id66ylu3"]
+
+[ext_resource type="PackedScene" uid="uid://doxrtiiepr5i4" path="res://player.tscn" id="1_ry3ms"]
+[ext_resource type="Script" path="res://dealer.gd" id="2_e2gib"]
+
+[node name="Dealer" instance=ExtResource("1_ry3ms")]
+script = ExtResource("2_e2gib")
+
+[node name="Buttons" parent="." index="1"]
+visible = false

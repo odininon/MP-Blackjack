@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://nbh1lt2bbqtm"]
+
+[ext_resource type="Script" path="res://card_stack.gd" id="1_erh8i"]
+[ext_resource type="PackedScene" uid="uid://ex0tsgxk2w3e" path="res://known_card.tscn" id="1_ysgwr"]
+[ext_resource type="PackedScene" uid="uid://175475ymlnss" path="res://unknown_card.tscn" id="3_wklkf"]
+
+[node name="CardStack" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_erh8i")
+known_card = ExtResource("1_ysgwr")
+unknown_card = ExtResource("3_wklkf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 1
+offset_right = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 60

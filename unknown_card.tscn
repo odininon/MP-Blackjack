@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://175475ymlnss"]
+
+[ext_resource type="Texture2D" uid="uid://dugrd45jaxktv" path="res://assets/cards/card_back.png" id="1_b8iqs"]
+
+[node name="UnknownCard" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 100.0
+offset_bottom = 56.208
+texture = ExtResource("1_b8iqs")
+expand_mode = 5
+stretch_mode = 4
