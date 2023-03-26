@@ -14,14 +14,17 @@ func get_dealt(card: Card, is_double: bool):
 		current_stack.add_known(card, is_double)
 	
 	if is_current:
-		if get_total() < 17:
+		if get_total()	 < 17:
 			hitting.emit(self)
-		elif get_total() > 21:
+		elif get_total()	 > 21:
 			show_full_hand()
 			busted.emit(self)
 		else:
-			standing.emit(self)
 			show_full_hand()
+			standing.emit(self)
+
+func _to_string():
+	return "Dealer"
 
 func show_full_hand():
 	for i in card_stacks.get_children():
@@ -37,4 +40,5 @@ func start_turn():
 	if get_total() < 17:
 		hitting.emit(self)
 	else:
+		show_full_hand()
 		standing.emit(self)

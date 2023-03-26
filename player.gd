@@ -14,6 +14,9 @@ signal busted
 var cards: Array[Card] = []
 var current_stack
 
+func _to_string():
+	return "Player"
+
 func _ready():
 	reset_hand()
 	buttons.visible = false
@@ -44,7 +47,7 @@ func get_total():
 	
 	for card in cards:
 		total += Global.get_numerical_value(card)
-		if card.suit == Global.CardValue.Ace:
+		if card.value == Global.CardValue.Ace:
 			includes_ace = true
 	
 	if includes_ace:
@@ -52,7 +55,7 @@ func get_total():
 			total += 1
 		else:
 			total += 11
-	
+
 	return total
 
 func _on_hit_button_pressed():

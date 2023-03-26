@@ -49,7 +49,7 @@ offset_left = 1720.0
 offset_top = 384.0
 offset_right = 1804.0
 offset_bottom = 415.0
-text = "Deal Card"
+text = "Deal New Hand"
 
 [node name="Dealer" parent="." instance=ExtResource("4_oigu4")]
 layout_mode = 1
