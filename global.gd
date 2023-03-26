@@ -65,6 +65,7 @@ func card_value_to_string(value: CardValue):
 		CardValue.King:
 			return "king"
 
+
 func get_numerical_value(card: Card):
 	match card.value:
 		CardValue.Ace:

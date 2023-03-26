@@ -5,6 +5,7 @@ var is_double: bool
 
 @onready var texture_rect = $CardImage
 
+
 func _ready():
 	texture_rect.texture = load(card.get_sprite())
 	if is_double:
